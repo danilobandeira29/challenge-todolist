@@ -2,7 +2,7 @@ import ICreateUserDTO from '../dtos/ICreateUserDTO';
 import User from '../models/User';
 
 class UsersRepository {
-  private users: User[] = [];
+  private users: User[];
 
   constructor() {
     this.users = [];
@@ -26,6 +26,12 @@ class UsersRepository {
     const createUser = new User({ name, email, password });
     this.users.push(createUser);
     return createUser;
+  }
+
+  public async findById(id: string): Promise<User | undefined> {
+    const user = this.users.find(findUser => findUser.id === id);
+
+    return user;
   }
 }
 
