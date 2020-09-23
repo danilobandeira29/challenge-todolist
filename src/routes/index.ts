@@ -1,9 +1,8 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+import usersRouter from './users.routes';
 
 const router = Router();
 
-router.get('/', (request: Request, response: Response) =>
-  response.json({ message: 'Hello, danilo!' }),
-);
+router.use('/users', usersRouter);
 
 export default router;
