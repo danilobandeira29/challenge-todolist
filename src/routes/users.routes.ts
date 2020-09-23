@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import UsersRepository from '../repositories/UsersRepository';
+import CreateUserService from '../services/CreateUserService';
 
 const usersRouter = Router();
 const usersRepository = new UsersRepository();
@@ -11,11 +12,17 @@ usersRouter.get('/', async (request: Request, response: Response) => {
 });
 
 usersRouter.post('/', async (request: Request, response: Response) => {
-  const { name, email } = request.body;
+  try {
+    const { name, email } = request.body;
 
-  const user = await usersRepository.create({ name, email });
+    const createUser = new CreateUserService(usersRepository);
 
-  return response.json(user);
+    const user = await createUser.execute({ name, email });
+
+    return response.json(user);
+  } catch (err) {
+    return response.json({ error: err.message });
+  }
 });
 
 export default usersRouter;

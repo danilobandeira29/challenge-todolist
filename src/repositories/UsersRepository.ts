@@ -12,6 +12,12 @@ class UsersRepository {
     return this.users;
   }
 
+  public async findByEmail(email: string): Promise<User | undefined> {
+    const user = this.users.find(findUser => findUser.email === email);
+
+    return user;
+  }
+
   public async create({ email, name }: ICreateUserDTO): Promise<User> {
     const createUser = new User({ name, email });
     this.users.push(createUser);
