@@ -18,8 +18,12 @@ class UsersRepository {
     return user;
   }
 
-  public async create({ email, name }: ICreateUserDTO): Promise<User> {
-    const createUser = new User({ name, email });
+  public async create({
+    email,
+    name,
+    password,
+  }: ICreateUserDTO): Promise<User> {
+    const createUser = new User({ name, email, password });
     this.users.push(createUser);
     return createUser;
   }

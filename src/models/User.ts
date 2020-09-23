@@ -9,9 +9,12 @@ class User {
 
   email: string;
 
-  constructor({ email, name }: Omit<ICreateUserDTO, 'id'>) {
+  password: string;
+
+  constructor({ email, name, password }: Omit<ICreateUserDTO, 'id'>) {
     this.email = email;
     this.name = name;
+    this.password = password;
     this.id = v4();
   }
 }

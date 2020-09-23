@@ -8,7 +8,9 @@
     "dev:server": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/server.ts"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "uuidv4": "^6.2.3"
   },
   "devDependencies": {
