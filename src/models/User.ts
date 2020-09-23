@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-import CreateUserDTO from '../dtos/CreateUserDTO';
+import ICreateUserDTO from '../dtos/ICreateUserDTO';
 
 class User {
   id: string;
@@ -9,7 +9,7 @@ class User {
 
   email: string;
 
-  constructor({ email, name }: Omit<CreateUserDTO, 'id'>) {
+  constructor({ email, name }: Omit<ICreateUserDTO, 'id'>) {
     this.email = email;
     this.name = name;
     this.id = v4();

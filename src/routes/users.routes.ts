@@ -1,20 +1,19 @@
 import { Router, Request, Response } from 'express';
-import User from '../models/User';
+import UsersRepository from '../repositories/UsersRepository';
 
 const usersRouter = Router();
+const usersRepository = new UsersRepository();
 
-const usersRepository: User[] = [];
+usersRouter.get('/', async (request: Request, response: Response) => {
+  const users = await usersRepository.all();
 
-usersRouter.get('/', (request: Request, response: Response) =>
-  response.json(usersRepository),
-);
+  return response.json(users);
+});
 
-usersRouter.post('/', (request: Request, response: Response) => {
+usersRouter.post('/', async (request: Request, response: Response) => {
   const { name, email } = request.body;
 
-  const user = new User({ name, email });
-
-  usersRepository.push(user);
+  const user = await usersRepository.create({ name, email });
 
   return response.json(user);
 });
