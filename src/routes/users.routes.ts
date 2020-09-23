@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import UsersRepository from '../repositories/UsersRepository';
 import CreateUserService from '../services/CreateUserService';
 import AuthenticateUserService from '../services/AuthenticateUserService';
+// import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
 const usersRepository = new UsersRepository();
@@ -42,4 +43,5 @@ usersRouter.post('/sessions', async (request: Request, response: Response) => {
     return response.json({ error: err.message });
   }
 });
+
 export default usersRouter;
