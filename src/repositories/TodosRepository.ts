@@ -21,6 +21,12 @@ class TodosRepository {
 
     return createTodo;
   }
+
+  public async delete(id: string): Promise<void> {
+    const filteredTodos = this.todos.filter(todo => todo.id !== id);
+
+    this.todos = filteredTodos;
+  }
 }
 
 export default TodosRepository;
