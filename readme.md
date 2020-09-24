@@ -7,7 +7,7 @@
 - [Desafio](#-Desafio)
 - [Tecnologias](#-Tecnologias)
 - [Formatadores de Código](#-Formatadores-de-Código)
-- [Rotas](#-Rotas)
+- [Rotas da API](#-Rotas-da-API)
 - [Baixar o Projeto](#-Baixar-o-Projeto)
 - [Futuras implementações](#-Futuras-implementações)
 
