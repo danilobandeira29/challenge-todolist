@@ -54,11 +54,11 @@ API REST onde é possível fazer o cadastro de usuário, iniciar sessão. Um usu
 ---
 
 ## 🔮 Futuras implementações
-- [] Criação do banco de dados(utilizando docker e mysql/postgres)
-- [] DDD
-- [] TDD
-- [] SOLID
-- [] Controllers para abstrair a lógica das rotas
+- [ ] Criação do banco de dados(utilizando docker e mysql/postgres)
+- [ ] DDD
+- [ ] TDD
+- [ ] SOLID
+- [ ] Controllers para abstrair a lógica das rotas
 
 ---
 
