@@ -7,8 +7,8 @@
 - [Desafio](#-Desafio)
 - [Tecnologias](#-Tecnologias)
 - [Formatadores de Código](#-Formatadores-de-Código)
-- [Rotas da API](#-Rotas-da-API)
 - [Baixar o Projeto](#-Baixar-o-Projeto)
+- [Rotas da API](#-Rotas-da-API)
 - [Futuras implementações](#-Futuras-implementações)
 
 
@@ -30,14 +30,6 @@ API REST onde é possível fazer o cadastro de usuário, iniciar sessão. Um usu
 - Prettier
 - editorconfig
 
-## 🔃 Rotas da API
-- GET **`/users`** - Listagem de todos os usuários.
-- POST **`/users`** - Criar um novo **usuário**, informando *email*, *name* e *password* no corpo da requisição.
-- POST **`/users/sessions`** - Iniciar a **sessão do usuário** na aplicação, informando *email* e *password* no corpo da requisição.
-- GET **`/todos`** - Listagem de todos os *to-dos* do usuário logado.
-- POST **`/todos`** - Criar um novo *to-do* pelo usuário logado, informando o *to-do* no corpo da requisição.
-- DELETE **`/todos/:id`** - Deletar um *to-do*, informando a **id** do *to-do* no parâmetro de rota.
-
 ## 👇 Baixar o Projeto
 - Abra seu terminal para executar as seguintes linhas de comando:
 ```bash
@@ -53,6 +45,14 @@ API REST onde é possível fazer o cadastro de usuário, iniciar sessão. Um usu
   ## inicializando o servidor(ou você pode executar 'npm dev:server')
   $ yarn dev:server
 ```
+
+## 🔃 Rotas da API
+- GET **`/users`** - Listagem de todos os usuários.
+- POST **`/users`** - Criar um novo **usuário**, informando *email*, *name* e *password* no corpo da requisição.
+- POST **`/users/sessions`** - Iniciar a **sessão do usuário** na aplicação, informando *email* e *password* no corpo da requisição.
+- GET **`/todos`** - Listagem de todos os *to-dos* do usuário logado.
+- POST **`/todos`** - Criar um novo *to-do* pelo usuário logado, informando o *to-do* no corpo da requisição.
+- DELETE **`/todos/:id`** - Deletar um *to-do*, informando a **id** do *to-do* no parâmetro de rota.
 
 ## 🔮 Futuras implementações
 - [ ] Criação do banco de dados(utilizando docker e mysql/postgres)
