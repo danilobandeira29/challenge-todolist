@@ -22,11 +22,6 @@ API REST onde é possível fazer o cadastro de usuário, iniciar sessão. Um usu
 - API REST
 - Typescript
 - JSON Web Token(jwt)
-- > Docker
-- > MySQL/PostgreSQL
-- > TDD
-- > DDD
-- > SOLID
 
 ## 💅 Formatadores de Código
 - ESLint
