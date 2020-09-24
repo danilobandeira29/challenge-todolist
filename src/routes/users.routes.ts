@@ -13,7 +13,7 @@ usersRouter.get('/', async (request: Request, response: Response) => {
 });
 
 usersRouter.post('/', async (request: Request, response: Response) => {
-  try {
+
     const { name, email, password } = request.body;
 
     const createUser = new CreateUserService(usersRepository);
@@ -21,13 +21,11 @@ usersRouter.post('/', async (request: Request, response: Response) => {
     const user = await createUser.execute({ name, email, password });
 
     return response.json(user);
-  } catch (err) {
-    return response.json({ error: err.message });
-  }
+
 });
 
 usersRouter.post('/sessions', async (request: Request, response: Response) => {
-  try {
+
     const { email, password } = request.body;
 
     const authenticateUser = new AuthenticateUserService(usersRepository);
@@ -38,9 +36,7 @@ usersRouter.post('/sessions', async (request: Request, response: Response) => {
     });
 
     return response.json(userAuthenticated);
-  } catch (err) {
-    return response.json({ error: err.message });
-  }
+
 });
 
 export default usersRouter;

@@ -1,6 +1,7 @@
 import ICreateUserDTO from '../dtos/ICreateUserDTO';
 import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
+import AppError from '../errors/AppError'
 
 class CreateUserService {
   constructor(private usersRepository: UsersRepository) {}
@@ -13,7 +14,7 @@ class CreateUserService {
     const findEmailExists = await this.usersRepository.findByEmail(email);
 
     if (findEmailExists) {
-      throw new Error('This email is already used');
+      throw new AppError('This email is already used');
     }
 
     const user = await this.usersRepository.create({ email, name, password });

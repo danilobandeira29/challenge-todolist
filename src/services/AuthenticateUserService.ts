@@ -1,6 +1,7 @@
 import { sign } from 'jsonwebtoken';
 import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
+import AppError from '../errors/AppError';
 
 interface IRequest {
   email: string;
@@ -19,11 +20,11 @@ class AuthenticateUserService {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new Error('Incorrect e-mail/password combination');
+      throw new AppError('Incorrect e-mail/password combination');
     }
 
     if (user.password !== password) {
-      throw new Error('Incorrect e-mail/password combination');
+      throw new AppError('Incorrect e-mail/password combination');
     }
 
     const token = sign({}, '1234', {

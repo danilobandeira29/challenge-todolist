@@ -39,7 +39,7 @@ todosRouter.delete('/:id', async (request: Request, response: Response) => {
 
   await deleteTodo.execute({ id });
 
-  return response.json({ message: 'Todo deleted!' });
+  return response.status(204).json();
 });
 
 export default todosRouter;

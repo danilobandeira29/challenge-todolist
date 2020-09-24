@@ -2,9 +2,9 @@ import { Router } from 'express';
 import usersRouter from './users.routes';
 import todosRouter from './todos.routes';
 
-const router = Router();
+const routes = Router();
 
-router.use('/users', usersRouter);
-router.use('/todos', todosRouter);
+routes.use('/users', usersRouter);
+routes.use('/todos', todosRouter);
 
-export default router;
+export default routes;
