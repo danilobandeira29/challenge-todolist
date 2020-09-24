@@ -2,7 +2,6 @@ import { Router, Request, Response } from 'express';
 import UsersRepository from '../repositories/UsersRepository';
 import CreateUserService from '../services/CreateUserService';
 import AuthenticateUserService from '../services/AuthenticateUserService';
-// import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
 const usersRepository = new UsersRepository();
